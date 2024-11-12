@@ -1,4 +1,4 @@
-my_dict = {'Elena': 1997, 'Emma': 1999, 'Mark': 1989, 'Alex': 1995 }
+my_dict = {'Elena': 1997, 'Emma': 1999, 'Mark': 1989, 'Alex': 1995}
 print(my_dict)
 print(my_dict['Emma'])
 print(my_dict.get('Liza'))
