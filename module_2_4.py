@@ -7,7 +7,7 @@ for num in numbers:
     if num <= 1:
         continue
 
-    is_prime = 1 > 0
+    is_prime = True
 
     for i in range(2, num):
         if num % i == 0:
@@ -21,4 +21,3 @@ for num in numbers:
 
 print("Primes:", primes)
 print("Not Primes:", not_primes)
-
