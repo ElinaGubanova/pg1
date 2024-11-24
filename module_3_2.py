@@ -1,8 +1,9 @@
 def is_email_correct(email):
-    return('@' in email and
-           email.endswith((".com", ".ru", ".net")))
+    return ('@' in email and
+            email.endswith((".com", ".ru", ".net")))
 
-def send_email(message, recipient,  sender = 'university.help@gmail.com'):
+
+def send_email(message, recipient, sender='university.help@gmail.com'):
     if not is_email_correct(recipient) and not is_email_correct(sender):
         print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
         return
@@ -16,6 +17,7 @@ def send_email(message, recipient,  sender = 'university.help@gmail.com'):
         return
     else:
         print(f'НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {sender} на адрес {recipient}.')
+
 
 send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
 
