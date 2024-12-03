@@ -12,6 +12,8 @@ def calculate_structure_sum(data):
             element_sum += calculate_structure_sum(i)
         elif isinstance(i, dict):
             element_sum += calculate_structure_sum(i.items())
+        elif isinstance(i, set):
+            element_sum += calculate_structure_sum(i)
 
     return element_sum
 
