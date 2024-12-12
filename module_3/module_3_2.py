@@ -1,5 +1,5 @@
 def is_email_correct(email):
-    return ('@' in email and
+    return ('@' in email or
             email.endswith((".com", ".ru", ".net")))
 
 
