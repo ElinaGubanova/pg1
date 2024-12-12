@@ -6,4 +6,3 @@ average_grades = {}
 for student, grade in zip(students_list, grades):
     average_grades[student] = sum(grade) / len(grade)
 print(average_grades)
-
