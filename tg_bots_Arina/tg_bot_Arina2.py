@@ -70,13 +70,15 @@ def send_welcome(message):
                           "/schedule - посмотреть расписание 🗓\n"
                           "/book + номер урока - забронировать урок ✅\n"
                           "/occupied - мои уроки 📝\n"
-                          "/cancel + номер урока - отменить урок ❌\n", reply_markup=create_keyboard())
+                          "/cancel + номер урока - отменить урок ❌\n"
+                          "/platform - платформа с уроками", reply_markup=create_keyboard())
 
 # Функция для создания клавиатуры
 def create_keyboard():
     keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
     keyboard.row('/schedule', '/occupied')
     keyboard.row('/start', '/payment')
+    keyboard.row('/platform')
     return keyboard
 
 # Обработчик команды /schedule
@@ -177,6 +179,17 @@ def cancel_lesson(message):
         bot.send_message(message.chat.id, "Пожалуйста, укажите корректный номер урока для отмены")
     except Exception as e:
         bot.send_message(message.chat.id, f"Произошла ошибка при отмене урока: {str(e)} ⚠️")
+
+# инфо о пользователе
+@bot.message_handler(commands=['info'])
+def greeting(message):
+    bot.send_message(message.chat.id,
+                     message)
+
+# ссылка
+@bot.message_handler(commands=['platform'])
+def site(message):
+    bot.send_message(message.chat.id, "ссылка на платформу: https://edvibe.com/")
 
 # Обработчик команды /payment
 @bot.message_handler(commands=['payment'])
